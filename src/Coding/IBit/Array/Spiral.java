@@ -1,4 +1,4 @@
-package Coding.IBit;
+package Coding.IBit.Array;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
