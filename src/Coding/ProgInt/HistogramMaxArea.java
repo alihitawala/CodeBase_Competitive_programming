@@ -21,14 +21,16 @@ public class HistogramMaxArea {
                 stack.push(new Building(a[i], i));
             }
             else if (stack.peek().height > a[i]) {
+                int lowestIndex = i;
                 while (!stack.isEmpty() && stack.peek().height > a[i]) {
                     Building poped = stack.pop();
+                    lowestIndex = poped.index;
                     int value = poped.height * (i-poped.index);
                     if (value>max)
                         max=value;
                 }
                 if (stack.isEmpty() || stack.peek().height != a[i])
-                    stack.push(new Building(a[i], i));
+                    stack.push(new Building(a[i], lowestIndex));
             }
         }
         while (!stack.isEmpty()) {
