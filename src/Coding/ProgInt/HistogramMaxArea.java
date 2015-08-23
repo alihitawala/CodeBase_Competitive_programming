@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class HistogramMaxArea {
     public static void main(String[] args) {
-        int[] a = {2,4,2,1};
+        int[] a = {2,4,2,1,10,6,10};
         int[] b = {4,7,6,7,8};
         System.out.println(maxArea(a));
         System.out.println(maxArea(b));
