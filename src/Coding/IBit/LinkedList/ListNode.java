@@ -24,7 +24,7 @@ public class ListNode {
     public static void print(ListNode listNode) {
         while (listNode != null)
         {
-            System.out.print(listNode.val);
+            System.out.print(listNode.val + " ");
             listNode = listNode.next;
         }
         System.out.println();
