@@ -41,11 +41,6 @@ public class LSZero {
             else {
                 numToIndex.put(sumLeft, i);
             }
-//            if (x==0 && maxDistance == -1) {
-//                maxDistance =0;
-//                maxLeft = i-1;
-//                maxRight = i;
-//            }
         }
         result = new ArrayList<>(a.subList(maxLeft+1, maxRight+1));
         return result;
