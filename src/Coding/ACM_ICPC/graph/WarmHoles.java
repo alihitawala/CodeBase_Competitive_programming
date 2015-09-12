@@ -36,19 +36,13 @@ public class WarmHoles {
         dist[0] = 0;
         for (int i = 0; i < n - 1; i++) {
             for (Edge e : a) {
-                int v = e.v;
-                int u = e.u;
-                int w = e.w;
-                if (dist[v] > dist[u] + w) {
-                    dist[v] = dist[u] + w;
+                if (dist[e.v] > dist[e.u] + e.w) {
+                    dist[e.v] = dist[e.u] + e.w;
                 }
             }
         }
         for (Edge e : a) {
-            int v = e.v;
-            int u = e.u;
-            int w = e.w;
-            if (dist[v] > dist[u] + w) {
+            if (dist[e.v] > dist[e.u] + e.w) {
                 return true;
             }
         }
