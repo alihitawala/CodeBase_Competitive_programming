@@ -13,9 +13,18 @@ public class Reverse {
         for (int i=0;i<t;i++) {
             int n = in.nextInt();
             System.out.println(Long.toBinaryString(n));
+            System.out.println(Long.toBinaryString(reverseBit(n)));
             System.out.println(Long.toBinaryString(reverse(n)));
             System.out.println((reverse(n)));
         }
+    }
+    private static int reverseBit (int a) {
+        int result = 0;
+        while (a != 0) {
+            result = (result << 1) | (a&1);
+            a>>=1;
+        }
+        return result;
     }
     public static long reverse(long A) {
         long n=0;

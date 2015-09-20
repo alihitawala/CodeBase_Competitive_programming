@@ -1,8 +1,5 @@
 package Coding.DS;
 
-import sun.nio.ch.sctp.SctpNet;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Scanner;
 
