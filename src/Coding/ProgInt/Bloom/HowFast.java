@@ -22,8 +22,8 @@ public class HowFast {
         int time = 0;
         while (a.get(a.size()-1) < n) {
             int prev = a.get(i-1);
-            if (a.size() >= k) {
-                int last = a.get(i-k);
+            if (a.size() > k) {
+                int last = a.get(i-k-1);
                 int x = 2*(prev - last) + last;
                 a.add(x);
             }
