@@ -32,3 +32,10 @@ public class Pascal {
         return v;
     }
 }
+/*
+ncr = n!/r!(n-r)!
+nc(r+1) = n!/r!
+n-r-1 = n-r!/n-r
+
+N-R/R+1
+ */
