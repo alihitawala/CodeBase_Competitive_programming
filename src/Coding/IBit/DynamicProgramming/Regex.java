@@ -12,6 +12,7 @@ public class Regex {
         String p = in.next();
         System.out.println(new Regex().isMatch(s,p));
     }
+
     public int isMatch(final String s, final String p) {
         String x = p;
         while(x.contains("**")) {
@@ -38,6 +39,27 @@ public class Regex {
                 a++;
             }
         }
+        return false;
+    }
+
+    public int isMatchCheck(String s, String p) {
+        return matchExp(p.toCharArray(), s.toCharArray(), 0, 0) ? 1 : 0;
+    }
+
+    public static boolean matchExp(char exp[], char str[], int i, int j) {
+
+        if (i == exp.length && j == str.length)
+            return true;
+
+        if (i == exp.length ||  j == str.length)
+            return false;
+
+        if (exp[i] == '.' || exp[i] == str[j])
+            return matchExp(exp, str, i + 1, j + 1);
+
+        if (exp[i] == '*')
+            return matchExp(exp, str, i + 1, j) || matchExp(exp, str, i, j + 1)
+                    || matchExp(exp, str, i + 1, j + 1);
         return false;
     }
 }
