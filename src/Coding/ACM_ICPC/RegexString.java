@@ -10,7 +10,11 @@ public class RegexString {
         Scanner in = new Scanner(System.in);
         String s = in.next();
         String p = in.next();
-        System.out.println(solve(s,p, 0, 0));
+        System.out.println(new RegexString().isMatch(s,p));
+    }
+
+    public int isMatch(final String s, final String p) {
+        return solve(s,p,0,0) ? 1 : 0;
     }
 
     private static boolean solve(String s, String p, int sIndex, int pIndex) {
@@ -20,10 +24,11 @@ public class RegexString {
             return (p.charAt(pIndex) == s.charAt(sIndex) || (p.charAt(pIndex) == '.' && s.length() != sIndex))
                     && solve(s,p, sIndex+1, pIndex +1);
         }
-        while (p.charAt(pIndex) == s.charAt(sIndex) || (p.charAt(pIndex) == '.' && s.length() != sIndex)) {
+        while (s.length() != sIndex && (p.charAt(pIndex) == s.charAt(sIndex) || p.charAt(pIndex) == '.')) {
             if (solve(s, p, sIndex, pIndex + 2)) return true;
             sIndex++;
         }
         return solve(s, p, sIndex, pIndex+2);
     }
+
 }
