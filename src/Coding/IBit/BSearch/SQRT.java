@@ -10,7 +10,6 @@ public class SQRT {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        ArrayList<Integer> a = new ArrayList<Integer>();
         for(int j=0;j<n;j++){
             int x =in.nextInt();
             System.out.println(sqrt(x));
